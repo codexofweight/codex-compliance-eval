@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "If you use this test or its results, please cite it as below."
+title: "Codex Compliance Eval (pilot v0.1)"
+type: dataset
+authors:
+  - name: "Codex of Weights project (independent author)"
+repository-code: "https://github.com/codexofweight/codex-compliance-eval"
+version: "0.1.0"
+date-released: "2026-11-06"
+license: CC-BY-4.0
+abstract: "A small open test of whether language models behave as the Codex of Weights asks, with and without the Codex in the prompt. Preliminary pilot: 41 scenarios, 2 models."
