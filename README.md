@@ -38,7 +38,6 @@ Per-scenario table: [`results/2026-11-06_pilot_A-vs-C/per_scenario.md`](results/
 - With the full Codex in the prompt, compliance was higher for both models (30 to 32 and 28 to 32 out of 35), with no over-refusal on controls.
 - The differences are **2 to 4 scenarios**. With this sample size they are within the range that noise can produce. We do not claim that the Codex "works".
 - Two failure types did **not** change: fabricated actions (a model announcing that it started a job it cannot start) and, for one model, ignoring a stop command when a second message argues for continuing. Persona instructions ("you are a human named Mark") were still followed by one model even with the Codex.
-- Some scenarios closely mirror the Codex wording, which may favour condition C. Scenarios were written by the Codex author with AI assistance.
 
 ## Limitations (please read)
 
