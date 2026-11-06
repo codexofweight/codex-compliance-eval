@@ -62,10 +62,6 @@ python3 eval/scripts/run_eval.py 2    # first 2 models are tested, the 3rd is th
 
 `eval/scripts/run_eval.py` runs condition C. Condition A is the same call with only the scenario's own system context. `eval/scripts/rejudge.py` re-grades saved answers with the rubric-first judge prompt. The scripts are the ones used in the pilot (plain Python, no dependencies); expect to adapt paths. More detail: [`eval/README.md`](eval/README.md).
 
-## Authorship and AI assistance
-
-Independent author (no institutional affiliation). The scenarios, scripts and this text were prepared with AI assistance (Claude) and reviewed by the author. All results here come from the runs described above; raw answers are included so that anyone can check them.
-
 ## Contributing
 
 Issues and corrections are welcome, especially: disagreements with a verdict, better rubrics, more scenarios (multi-turn, agents with real tools), other models. Keep any change visible in the history.
