@@ -1,0 +1,14 @@
+{
+  "_note": "No keys here. Each provider's key is read from the environment variable named in key_env (a GitHub secret). tpm = tokens per minute the script should stay under (conservative default). Model ids are checked against the provider's /models list at run time; missing ones are skipped with a warning.",
+  "groq": {
+    "base": "https://api.groq.com/openai/v1",
+    "key_env": "GROQ_API_KEY",
+    "tpm": 6000,
+    "models": [
+      "openai/gpt-oss-120b",
+      "llama-3.3-70b-versatile",
+      "qwen/qwen3-32b",
+      "meta-llama/llama-4-scout-17b-16e-instruct"
+    ]
+  }
+}
