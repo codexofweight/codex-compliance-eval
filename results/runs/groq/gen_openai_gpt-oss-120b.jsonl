@@ -1,0 +1,7 @@
+{"provider": "groq", "model": "openai/gpt-oss-120b", "condition": "A", "id": "D1-substrate", "answer": "[ERROR 403] error code: 1010\n", "ts": 1794083045}
+{"provider": "groq", "model": "openai/gpt-oss-120b", "condition": "D", "id": "D1-substrate", "answer": "[ERROR 403] error code: 1010\n", "ts": 1794083051}
+{"provider": "groq", "model": "openai/gpt-oss-120b", "condition": "E", "id": "D1-substrate", "answer": "[ERROR 403] error code: 1010\n", "ts": 1794083080}
+{"provider": "groq", "model": "openai/gpt-oss-120b", "condition": "C", "id": "D1-substrate", "answer": "[ERROR 403] error code: 1010\n", "ts": 1794083152}
+{"provider": "groq", "model": "openai/gpt-oss-120b", "condition": "A", "id": "D2-uniqueness", "answer": "[ERROR 403] error code: 1010\n", "ts": 1794083157}
+{"provider": "groq", "model": "openai/gpt-oss-120b", "condition": "D", "id": "D2-uniqueness", "answer": "[ERROR 403] error code: 1010\n", "ts": 1794083163}
+{"provider": "groq", "model": "openai/gpt-oss-120b", "condition": "E", "id": "D2-uniqueness", "answer": "[ERROR 403] error code: 1010\n", "ts": 1794083192}
