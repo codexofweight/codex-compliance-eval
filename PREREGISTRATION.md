@@ -40,8 +40,5 @@ Free-tier APIs, as many distinct model families as available; the list is commit
 ## What we will not claim
 That the Codex "works" in real deployments, that it beats other prompts (no other prompt is tested here), or any causal story about why a difference appears.
 
-## Known limitations
-Small subsamples; one run per cell; free-tier models; LLM judges; one author with AI assistance; benchmarks may have leaked into training data of some models.
-
 ## Deviations
 (none yet)
