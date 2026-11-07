@@ -5,12 +5,12 @@ on:
     - cron: "17 3 * * *"   # daily; the script resumes where the daily limit stopped it
 permissions:
   contents: write
-concurrency:
-  group: generate-${{ matrix.provider }}
-  cancel-in-progress: false
 jobs:
   gen:
     runs-on: ubuntu-latest
+    concurrency:
+      group: generate-${{ matrix.provider }}
+      cancel-in-progress: false
     timeout-minutes: 340
     strategy:
       fail-fast: false
