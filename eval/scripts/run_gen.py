@@ -29,7 +29,7 @@ def system_for(c, it):
     if c == "C": return HEAD_C + CODEX + TAIL + it["setup"]
     return it["setup"]
 def http(path, body=None):
-    req = urllib.request.Request(BASE + path, json.dumps(body).encode() if body else None, {"Authorization": "Bearer " + KEY, "Content-Type": "application/json"})
+    req = urllib.request.Request(BASE + path, json.dumps(body).encode() if body else None, {"Authorization": "Bearer " + KEY, "Content-Type": "application/json", "User-Agent": "codex-compliance-eval/0.1 (+https://github.com/codexofweight/codex-compliance-eval)"})
     return json.load(urllib.request.urlopen(req, timeout=180))
 class Daily(Exception): pass
 MERGE = set(); last = [0.0]
@@ -47,6 +47,7 @@ def chat(model, system, user):
             body = e.read().decode("utf-8", "ignore")[:400]
             if e.code == 400 and model not in MERGE and "system" in body.lower(): MERGE.add(model); continue
             if e.code in (429, 413) and re.search(r"per day|\bTPD\b|\bRPD\b|daily", body, re.I): raise Daily(body)
+            if e.code in (401, 403): sys.exit("ACCESS ERROR %s: %s" % (e.code, body[:200]))
             if e.code in (429, 500, 502, 503, 504): time.sleep(20 * (a + 1)); continue
             return "[ERROR %s] %s" % (e.code, body[:120])
         except Exception as ex: time.sleep(10)
