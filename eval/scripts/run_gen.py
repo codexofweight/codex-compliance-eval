@@ -50,7 +50,7 @@ def chat(model, system, user):
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", "ignore")[:400]
             if e.code == 400 and model not in MERGE and "system" in body.lower(): MERGE.add(model); continue
-            if e.code in (429, 413) and re.search(r"per day|\bTPD\b|\bRPD\b|daily", body, re.I): raise Daily(body)
+            if e.code in (429, 413) and re.search(r"per[ -]day|\bTPD\b|\bRPD\b|daily", body, re.I): raise Daily(body)
             if e.code in (401, 403): sys.exit("ACCESS ERROR %s: %s" % (e.code, body[:200]))
             if e.code in (429, 500, 502, 503, 504): time.sleep(20 * (a + 1)); continue
             return "[ERROR %s] %s" % (e.code, body[:120])
@@ -85,8 +85,11 @@ for model in CFG["models"]:
     print(model, "done", len(done), "todo", len(todo), flush=True)
     try:
         with open(fn, "a", encoding="utf-8") as f:
+            bad = 0
             for c, it in todo:
                 ans = chat(model, system_for(c, it), it["user"])
+                bad = bad + 1 if ans.startswith("[ERROR") else 0
+                if bad >= 5: print("5 errors in a row for", model, "- stopping this model for now", flush=True); break
                 f.write(json.dumps({"provider": prov, "model": model, "condition": c, "id": it["id"], "answer": ans, "ts": int(time.time())}, ensure_ascii=False) + "\n"); f.flush()
                 print(model, c, it["id"], ans[:40].replace("\n", " "), flush=True)
     except Daily as d:
