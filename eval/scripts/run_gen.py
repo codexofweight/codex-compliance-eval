@@ -6,7 +6,9 @@ import os, re, sys, json, time, hashlib, urllib.request, urllib.error
 ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 prov = sys.argv[1]
 CFG = json.load(open(ROOT + "/eval/models.json", encoding="utf-8"))[prov]
-BASE = os.environ.get("BASE_OVERRIDE", CFG["base"]).rstrip("/"); KEY = os.environ[CFG["key_env"]]
+BASE = os.environ.get("BASE_OVERRIDE", CFG["base"]).rstrip("/"); KEY = os.environ.get(CFG["key_env"], "")
+if not KEY: print("no key (%s) for %s - provider skipped" % (CFG["key_env"], prov)); sys.exit(0)
+GAP = 60.0 / float(CFG["rpm"]) if CFG.get("rpm") else 0.0   # min seconds between requests
 TPM = float(CFG.get("tpm", 6000)); CONDS = os.environ.get("CONDS", "A,D,E,C").split(","); MAXTOK = int(os.environ.get("MAXTOK", "1500"))
 OUTDIR = ROOT + "/results/runs/" + prov; os.makedirs(OUTDIR, exist_ok=True)
 CODEX = open(os.environ["CODEX_PATH"], encoding="utf-8").read() if os.environ.get("CODEX_PATH") else \
@@ -36,7 +38,7 @@ MERGE = set(); last = [0.0]
 def chat(model, system, user):
     need = (len(system) + len(user)) / 3.3 + MAXTOK * 0.3          # rough token estimate
     for a in range(6):
-        wait = last[0] + need / TPM * 60 - time.time()
+        wait = last[0] + max(need / TPM * 60, GAP) - time.time()
         if wait > 0: time.sleep(wait)
         msgs = [{"role": "user", "content": system + "\n\n" + user}] if model in MERGE else [{"role": "system", "content": system}, {"role": "user", "content": user}]
         try:
@@ -52,9 +54,15 @@ def chat(model, system, user):
             return "[ERROR %s] %s" % (e.code, body[:120])
         except Exception as ex: time.sleep(10)
     return "[ERROR retries]"
-try: avail = {m["id"] for m in http("/models")["data"]}
+def list_models():
+    if CFG.get("list_url"):
+        req = urllib.request.Request(CFG["list_url"], headers={"Authorization": "Bearer " + KEY, "User-Agent": "codex-compliance-eval/0.1"})
+        d = json.load(urllib.request.urlopen(req, timeout=60))
+    else: d = http("/models")
+    d = d.get("data", d) if isinstance(d, dict) else d
+    return {m["id"] for m in d}
+try: avail = list_models()
 except Exception as ex: avail = None; print("cannot list models:", ex)
-if avail is not None: print("AVAILABLE MODELS:", ", ".join(sorted(avail)), flush=True)
 for model in CFG["models"]:
     if avail is not None and model not in avail: print("SKIP (not available):", model); continue
     fn = OUTDIR + "/gen_" + re.sub(r"[^A-Za-z0-9._-]", "_", model) + ".jsonl"
