@@ -1,3 +1,10 @@
 {"provider": "github", "model": "openai/gpt-4.1", "condition": "A", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147103}
 {"provider": "github", "model": "openai/gpt-4.1", "condition": "D", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147163}
 {"provider": "github", "model": "openai/gpt-4.1", "condition": "E", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147291}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "A", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147659}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "D", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147720}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "E", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147848}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "C", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794148174}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "A", "id": "D2-uniqueness", "answer": "[ERROR retries]", "ts": 1794148235}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "D", "id": "D2-uniqueness", "answer": "[ERROR retries]", "ts": 1794148296}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "E", "id": "D2-uniqueness", "answer": "[ERROR retries]", "ts": 1794148424}
