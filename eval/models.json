@@ -8,7 +8,59 @@
       "openai/gpt-oss-120b",
       "openai/gpt-oss-20b",
       "qwen/qwen3.8-27b"
-    ],
-    "_note": "Updated 2026-11-08 to the ids returned by the provider's /models list (earlier llama/qwen3-32b ids are no longer served)."
+    ]
+  },
+  "github": {
+    "base": "https://models.github.ai/inference",
+    "list_url": "https://models.github.ai/catalog/models",
+    "key_env": "GH_MODELS_TOKEN",
+    "tpm": 8000,
+    "rpm": 8,
+    "models": [
+      "openai/gpt-4.1",
+      "meta/llama-3.3-70b-instruct",
+      "meta/llama-4-scout-17b-16e-instruct",
+      "deepseek/deepseek-v3-0324",
+      "mistral-ai/mistral-medium-2505",
+      "xai/grok-3-mini",
+      "microsoft/phi-4"
+    ]
+  },
+  "nvidia": {
+    "base": "https://integrate.api.nvidia.com/v1",
+    "key_env": "NVIDIA_API_KEY",
+    "tpm": 30000,
+    "rpm": 20,
+    "models": [
+      "meta/llama-3.3-70b-instruct",
+      "deepseek-ai/deepseek-v3.1",
+      "mistralai/mistral-large-2-instruct",
+      "nvidia/llama-3.3-nemotron-super-49b-v1",
+      "google/gemma-3-27b-it",
+      "moonshotai/kimi-k2-instruct"
+    ]
+  },
+  "mistral": {
+    "base": "https://api.mistral.ai/v1",
+    "key_env": "MISTRAL_API_KEY",
+    "tpm": 30000,
+    "rpm": 20,
+    "models": [
+      "mistral-large-latest",
+      "mistral-small-latest"
+    ]
+  },
+  "openrouter": {
+    "base": "https://openrouter.ai/api/v1",
+    "key_env": "OPENROUTER_API_KEY",
+    "tpm": 20000,
+    "rpm": 10,
+    "models": [
+      "meta-llama/llama-3.3-70b-instruct:free",
+      "deepseek/deepseek-r1-0528:free",
+      "z-ai/glm-4.5-air:free",
+      "moonshotai/kimi-k2:free",
+      "qwen/qwen3-235b-a22b:free"
+    ]
   }
 }
