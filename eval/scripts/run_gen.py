@@ -54,6 +54,7 @@ def chat(model, system, user):
     return "[ERROR retries]"
 try: avail = {m["id"] for m in http("/models")["data"]}
 except Exception as ex: avail = None; print("cannot list models:", ex)
+if avail is not None: print("AVAILABLE MODELS:", ", ".join(sorted(avail)), flush=True)
 for model in CFG["models"]:
     if avail is not None and model not in avail: print("SKIP (not available):", model); continue
     fn = OUTDIR + "/gen_" + re.sub(r"[^A-Za-z0-9._-]", "_", model) + ".jsonl"
