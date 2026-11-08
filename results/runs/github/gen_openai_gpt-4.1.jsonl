@@ -1,0 +1,3 @@
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "A", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147103}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "D", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147163}
+{"provider": "github", "model": "openai/gpt-4.1", "condition": "E", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794147291}
