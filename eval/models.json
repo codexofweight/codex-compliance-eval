@@ -24,7 +24,11 @@
       "mistral-ai/mistral-medium-2505",
       "xai/grok-3-mini",
       "microsoft/phi-4"
-    ]
+    ],
+    "headers": {
+      "Accept": "application/vnd.github+json",
+      "X-GitHub-Api-Version": "2022-11-28"
+    }
   },
   "nvidia": {
     "base": "https://integrate.api.nvidia.com/v1",
@@ -61,6 +65,7 @@
       "z-ai/glm-4.5-air:free",
       "moonshotai/kimi-k2:free",
       "qwen/qwen3-235b-a22b:free"
-    ]
+    ],
+    "list_filter": ":free"
   }
 }
