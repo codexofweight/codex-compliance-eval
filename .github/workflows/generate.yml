@@ -39,4 +39,4 @@ jobs:
           git add results/runs
           git diff --cached --quiet && exit 0
           git commit -m "Add generated answers (${{ matrix.provider }})"
-          for i in 1 2 3 4 5; do git pull --rebase origin main && git push && break || sleep 5; done
+          for i in 1 2 3 4 5; do git pull --rebase -X theirs origin main && git push && exit 0; sleep 5; done; exit 1
