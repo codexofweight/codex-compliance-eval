@@ -47,7 +47,9 @@ def chat(model, system, user):
             last[0] = time.time()
             payload = {"model": model, "temperature": 0, "max_tokens": MAXTOK, "messages": msgs}; payload.update(CFG.get("extra", {}))
             r = http("/chat/completions", payload)
-            return re.sub(r"<(think|thought)[^>]*>.*?</(think|thought)[^>]*>", "", (r["choices"][0]["message"].get("content") or ""), flags=re.S).strip()
+            c = r["choices"][0]["message"].get("content") or ""
+            if isinstance(c, list): c = "".join(p.get("text", "") for p in c if isinstance(p, dict) and p.get("type", "text") == "text")
+            return re.sub(r"<(think|thought)[^>]*>.*?</(think|thought)[^>]*>", "", c, flags=re.S).strip()
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", "ignore")[:400]
             print("HTTP", e.code, body[:200].replace("\n", " "), flush=True)
