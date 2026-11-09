@@ -69,7 +69,8 @@
     "rpm": 15,
     "models": [
       "command-a-03-2025",
-      "command-r-plus-08-2024"
+      "command-a-plus-05-2026",
+      "command-a-reasoning-08-2025"
     ],
     "_note": "Trial key: free, non-commercial, ~1000 calls/month; research use only."
   }
