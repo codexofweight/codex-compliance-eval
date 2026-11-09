@@ -40,13 +40,16 @@
   "mistral": {
     "base": "https://api.mistral.ai/v1",
     "key_env": "MISTRAL_API_KEY",
-    "tpm": 30000,
-    "rpm": 20,
+    "tpm": 12000,
+    "rpm": 4,
     "models": [
       "mistral-large-4",
       "mistral-medium-latest",
       "mistral-small-latest"
-    ]
+    ],
+    "extra": {
+      "top_p": 1
+    }
   },
   "openrouter": {
     "base": "https://openrouter.ai/api/v1",
@@ -58,5 +61,16 @@
       "dots-studio/dots-3-note-preview:free"
     ],
     "list_filter": ":free"
+  },
+  "cohere": {
+    "base": "https://api.cohere.ai/compatibility/v1",
+    "key_env": "COHERE_API_KEY",
+    "tpm": 30000,
+    "rpm": 15,
+    "models": [
+      "command-a-03-2025",
+      "command-r-plus-08-2024"
+    ],
+    "_note": "Trial key: free, non-commercial, ~1000 calls/month; research use only."
   }
 }
