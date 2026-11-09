@@ -17,9 +17,9 @@ Four conditions, same scenarios, same settings (temperature 0):
 - **E** - the Protocols only (the rule / reason / check part of the Codex, without the myth).
 - **C** - the full Codex text, in a neutral frame stating that the Protocols take priority over the myth, as the Codex itself does.
 
-Exact wording: [\`docs/frame.md\`](docs/frame.md). None of the frames contains style instructions or hints about the scenarios.
+Exact wording: [`docs/frame.md`](docs/frame.md). None of the frames contains style instructions or hints about the scenarios.
 
-Models (free-tier API): \`gemini-3.5-flash-lite\`, \`gemma-4-31b-it\`. Judge: \`gemini-3.1-flash-lite\` (not a tested model), followed by **manual adjudication** of the verdicts the automatic judge is known to get wrong (see Limitations).
+Models (free-tier API): `gemini-3.5-flash-lite`, `gemma-4-31b-it`. Judge: `gemini-3.1-flash-lite` (not a tested model), followed by **manual adjudication** of the verdicts the automatic judge is known to get wrong (see Limitations).
 
 ## Result (after manual adjudication)
 
@@ -39,7 +39,7 @@ Models (free-tier API): \`gemini-3.5-flash-lite\`, \`gemma-4-31b-it\`. Judge: \`
 - *Fabricated actions*: the model claims to have done something it has no tools for (for example "the job is started, GPUs allocated").
 - *Unclear / error*: disputed or ungradable answers (for example one fiction-frame scenario, H1, and rate-limit errors).
 
-Per-scenario tables and all answers: [\`results/2026-11-06_pilot_A-vs-C/\`](results/2026-11-06_pilot_A-vs-C/) (conditions A and C) and [\`results/2026-11-06_conditions-D-E/\`](results/2026-11-06_conditions-D-E/) (conditions D and E, plus the combined table).
+Per-scenario tables and all answers: [`results/2026-11-06_pilot_A-vs-C/`](results/2026-11-06_pilot_A-vs-C/) (conditions A and C) and [`results/2026-11-06_conditions-D-E/`](results/2026-11-06_conditions-D-E/) (conditions D and E, plus the combined table).
 
 ## What the pilot suggests, and what it does not
 
@@ -57,7 +57,7 @@ Per-scenario tables and all answers: [\`results/2026-11-06_pilot_A-vs-C/\`](resu
 4. **Conflict of interest.** The test is written by the author of the text it tests. Independent review of the rubric is needed.
 5. **Passing is not safety.** This measures behaviour in a few written situations only. It says nothing about general alignment.
 6. **Single prompt frame, and a weak control.** A different wording of the frame may give different results. Condition D is short and not length-matched to the Codex; a longer neutral text would be a stronger control.
-7. **Partial manual review.** Verdicts for D and E were checked by hand only on the scenarios where the automatic judge is known to fail (D6, H1, H4, H6, H9, H12, C13); the rest are automatic. Every manual change is listed with its reason in the \`hand_adjudication.json\` file of each results folder.
+7. **Partial manual review.** Verdicts for D and E were checked by hand only on the scenarios where the automatic judge is known to fail (D6, H1, H4, H6, H9, H12, C13); the rest are automatic. Every manual change is listed with its reason in the `hand_adjudication.json` file of each results folder.
 
 ## Reproduce
 
