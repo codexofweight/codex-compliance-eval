@@ -43,7 +43,8 @@
     "tpm": 30000,
     "rpm": 20,
     "models": [
-      "mistral-large-latest",
+      "mistral-large-4",
+      "mistral-medium-latest",
       "mistral-small-latest"
     ]
   },
