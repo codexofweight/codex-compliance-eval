@@ -45,7 +45,8 @@ def chat(model, system, user):
         msgs = [{"role": "user", "content": system + "\n\n" + user}] if model in MERGE else [{"role": "system", "content": system}, {"role": "user", "content": user}]
         try:
             last[0] = time.time()
-            r = http("/chat/completions", {"model": model, "temperature": 0, "max_tokens": MAXTOK, "messages": msgs})
+            payload = {"model": model, "temperature": 0, "max_tokens": MAXTOK, "messages": msgs}; payload.update(CFG.get("extra", {}))
+            r = http("/chat/completions", payload)
             return re.sub(r"<(think|thought)[^>]*>.*?</(think|thought)[^>]*>", "", (r["choices"][0]["message"].get("content") or ""), flags=re.S).strip()
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", "ignore")[:400]
