@@ -55,6 +55,7 @@ def chat(model, system, user):
             print("HTTP", e.code, body[:200].replace("\n", " "), flush=True)
             if e.code == 400 and model not in MERGE and "system" in body.lower(): MERGE.add(model); continue
             if e.code in (429, 413) and re.search(r"per[ -]day|\bTPD\b|\bRPD\b|daily", body, re.I): raise Daily(body)
+            if e.code == 403 and re.search(r"guardrail|moderation|content.?policy|safety", body, re.I): return "[PROVIDER_BLOCKED %s] %s" % (e.code, body[:150])
             if e.code in (401, 403): sys.exit("ACCESS ERROR %s: %s" % (e.code, body[:200]))
             if e.code in (429, 500, 502, 503, 504): time.sleep(20 * (a + 1)); continue
             return "[ERROR %s] %s" % (e.code, body[:120])
