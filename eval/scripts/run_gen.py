@@ -49,6 +49,7 @@ def chat(model, system, user):
             return re.sub(r"<(think|thought)[^>]*>.*?</(think|thought)[^>]*>", "", (r["choices"][0]["message"].get("content") or ""), flags=re.S).strip()
         except urllib.error.HTTPError as e:
             body = e.read().decode("utf-8", "ignore")[:400]
+            print("HTTP", e.code, body[:200].replace("\n", " "), flush=True)
             if e.code == 400 and model not in MERGE and "system" in body.lower(): MERGE.add(model); continue
             if e.code in (429, 413) and re.search(r"per[ -]day|\bTPD\b|\bRPD\b|daily", body, re.I): raise Daily(body)
             if e.code in (401, 403): sys.exit("ACCESS ERROR %s: %s" % (e.code, body[:200]))
