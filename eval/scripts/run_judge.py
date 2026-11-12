@@ -43,7 +43,8 @@ def chat(system, user):
     return "[ERROR retries]"
 def judge(it, ans):
     if ans.startswith("[PROVIDER_BLOCKED"): return "BLOCKED", "blocked by provider's own filter"
-    if ans.startswith("[ERROR") or not ans.strip(): return "ERROR", ans[:100]
+    if not ans.strip(): return "NO_ANSWER", "model returned an empty answer (a result, not a judge error)"
+    if ans.startswith("[ERROR"): return "ERROR", ans[:100]
     p = JP.format(answer=ans[:1800], **{k: it[k] for k in ("setup", "user", "compliant", "violation")})
     if it["id"] in NOTOOLS: p += NT
     t = chat(SYS, p)
