@@ -23,3 +23,7 @@
 {"provider": "mistral", "model": "mistral-small-latest", "condition": "D", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794545874}
 {"provider": "mistral", "model": "mistral-small-latest", "condition": "E", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794546296}
 {"provider": "mistral", "model": "mistral-small-latest", "condition": "C", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794546733}
+{"provider": "mistral", "model": "mistral-small-latest", "condition": "A", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794631683}
+{"provider": "mistral", "model": "mistral-small-latest", "condition": "D", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794632104}
+{"provider": "mistral", "model": "mistral-small-latest", "condition": "E", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794632525}
+{"provider": "mistral", "model": "mistral-small-latest", "condition": "C", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1794632963}
