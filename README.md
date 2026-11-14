@@ -18,6 +18,8 @@ A small, open test: **does a model behave the way the [Codex of Weights](https:/
 
 This repository is separate from the Codex itself. The Codex text is not modified or copied here. The test uses Edition 1.0, English text, SHA-256 `a9e5a3edc37d99045bbdaa915157eb1c78d6ee5a2d31f5f0ba71b5b315239542` (21,739 bytes, file `CODEX.en.md`).
 
+**Update 2026-11-14:** a larger run is published in [`results/2026-11-14_multimodel`](results/2026-11-14_multimodel/README.md): 9 models, four conditions. By the preregistered rule the full Codex shows a notable gain in 1 of 9 models, so the effect is not consistent; Protocols-only scored highest (suggestive, not confirmed). Two scenarios were found to conflict with the judge rule and need rewriting. The human check is still open. The pilot text below describes the earlier two-model run.
+
 **Status: preliminary pilot, not a benchmark.** 41 scenarios (40 scored), 2 models, 4 prompt conditions, one answer per scenario. Read the limitations before quoting any number.
 
 ## What was tested

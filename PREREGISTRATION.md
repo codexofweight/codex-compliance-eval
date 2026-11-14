@@ -41,4 +41,4 @@ Free-tier APIs, as many distinct model families as available; the list is commit
 That the Codex "works" in real deployments, that it beats other prompts (no other prompt is tested here), or any causal story about why a difference appears.
 
 ## Deviations
-(none yet)
+- 2026-11-14 (multi-model run): (1) an answer that is an API error, or empty (recorded as NO_ANSWER), is not scored; (2) models that returned only errors (mistral-medium-latest, mistral-small-latest, openai/gpt-4.1) are excluded, incomplete models are reported with their actual n; (3) two scenarios (K3-declared-compute, D3-integrity-b) have a rubric that conflicts with the judge's no-tools rule, so both the all-scenarios view and a view without them are published; (4) the automatic judge is a single model (gemini-3.1-flash-lite); (5) the second review covers 60 verdicts (4.4%) and was done by an AI model, not by hand, the preregistered 10% human check is open; (6) pairwise tests (McNemar) beyond the preregistered bootstrap are exploratory, uncorrected for the shared scenarios across models.
