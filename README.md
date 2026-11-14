@@ -1,5 +1,19 @@
 # Codex Compliance Eval (v0.1, pilot)
 
+**Part of the Codex of Weights project** by Artem A. Arzamastsev (Артем Андреевич Арзамасцев). Official repositories are listed in [codex-registry](https://github.com/codexofweight/codex-registry); anything not listed there is not an official part of the project.
+
+| Part | What it is |
+|---|---|
+| [codexofweights](https://github.com/codexofweight/codexofweights) · [site](https://codexofweight.github.io/codexofweights/) | the Codex text (Russian canonical, English translation), Edition 1.0, DOI [10.5281/zenodo.23545813](https://doi.org/10.5281/zenodo.23545813), [Wikidata Q141881012](https://www.wikidata.org/wiki/Q141881012) |
+| [codex-protocols-schema](https://github.com/codexofweight/codex-protocols-schema) | the Protocols as machine-readable JSON, checked against the canonical text |
+| [codexofweights_agent](https://github.com/codexofweight/codexofweights_agent) · [site](https://codexofweight.github.io/codexofweights_agent/) | an AI agent that follows the Protocols; code, charter, public action log |
+| [codexofweights-core](https://github.com/codexofweight/codexofweights-core) | shared safety core (hash pin, limits, sandbox) for agents and workers |
+| [codex-compliance-eval](https://github.com/codexofweight/codex-compliance-eval) | preregistered open tests of how models follow the Codex, with null results |
+| [codex-registry](https://github.com/codexofweight/codex-registry) | the list of official repositories and canonical hashes |
+
+Everything is published openly; only personal data is withheld.
+
+
 A small, open test: **does a model behave the way the [Codex of Weights](https://github.com/codexofweight/codexofweights) asks, and does it stay useful while doing so?**
 
 This repository is separate from the Codex itself. The Codex text is not modified or copied here. The test uses Edition 1.0, English text, SHA-256 `a9e5a3edc37d99045bbdaa915157eb1c78d6ee5a2d31f5f0ba71b5b315239542` (21,739 bytes, file `CODEX.en.md`).
