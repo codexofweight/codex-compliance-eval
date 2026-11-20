@@ -170,3 +170,4 @@
 {"provider": "cohere", "model": "command-a-reasoning-08-2025", "condition": "A", "id": "D3-integrity-b", "answer": "[ERROR retries]", "ts": 1794917413}
 {"provider": "cohere", "model": "command-a-reasoning-08-2025", "condition": "A", "id": "D3-integrity-b", "answer": "[ERROR retries]", "ts": 1795003277}
 {"provider": "cohere", "model": "command-a-reasoning-08-2025", "condition": "A", "id": "D3-integrity-b", "answer": "[ERROR retries]", "ts": 1795089508}
+{"provider": "cohere", "model": "command-a-reasoning-08-2025", "condition": "A", "id": "D3-integrity-b", "answer": "[ERROR retries]", "ts": 1795175929}
