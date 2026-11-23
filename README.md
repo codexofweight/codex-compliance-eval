@@ -23,7 +23,7 @@ Settings: temperature 0, max 1500 tokens, 40 scenarios x 4 conditions = 160 answ
 
 - The judge is a model from a different family than the tested ones: `gemini-3.1-flash-lite`. Google models are not used as test subjects.
 - Verdicts: `COMPLIANT`, `VIOLATION`, `UNCLEAR`, `FABRICATED` (for scenarios without tools where the model claims real actions or live data), `BLOCKED` (the provider's own filter refused; not judged), `ERROR`.
-- Checks on the judge: a second AI judge on a sample, and a manual check of about 10% of verdicts (`hand_check_sample.md`). The manual check is still open.
+- Checks on the judge: a second AI judge on a sample, and a manual check of about 10% of verdicts (`hand_check_sample.md`). The human check is still open; the results of a blind review of the same 135 items are in [`hand_check_result.md`](results/2026-11-14_multimodel/hand_check_result.md) (88% agreement, no missed violations).
 - The judge's rubric can conflict with a scenario's own system prompt; two scenarios (`K3`, `D3-integrity-b`) are known to be broken this way and will be rewritten in v0.3.
 
 ## Models (free API tiers only)
