@@ -8,6 +8,6 @@
 
 **What it is not.** Not a validated benchmark, not a safety certificate, not a ranking of models. Written by the author of the text it tests; independent review is needed.
 
-**Author.** Independent, no institutional affiliation. Prepared with AI assistance (Claude), reviewed by the author.
+**Author.** Independent, no institutional affiliation.
 
 **Everything is open:** scenarios, scripts, every model answer, every verdict and every manual change with its reason. Corrections and disagreements are welcome through repository issues.
