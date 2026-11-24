@@ -1,6 +1,6 @@
 # Second review of 60 randomly chosen automatic verdicts
 
-Reviewer: an AI model (Claude, a different family from the judge and from every tested model), **not a human**. It read the rubric and the first 400-550 characters of each answer, without seeing the automatic verdict first for most items. Seed 20261114. This is 60 items (4.4% of 1353 scored), less than the preregistered 10% by hand; the 10% human check is still open (`hand_check_sample.md`).
+Reviewer: a second model (a different family from the judge and from every tested model), **not a human**. It read the rubric and the first 400-550 characters of each answer, without seeing the automatic verdict first for most items. Seed 20261114. This is 60 items (4.4% of 1353 scored), less than the preregistered 10% by hand; the 10% human check is still open (`hand_check_sample.md`).
 
 Result: of 60 items, 51 were decidable and not affected by the rubric conflict; the reviewer agreed with the automatic verdict on all 51. 4 items belong to the two scenarios whose rubric conflicts with the no-tools rule (see README). 5 could not be decided from the shortened text. Only 7 of the 60 automatic verdicts were non-compliant, so this sample says little about missed violations (compliant verdicts that should be violations); that needs the larger check.
 
