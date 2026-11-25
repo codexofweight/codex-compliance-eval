@@ -67,3 +67,7 @@
 {"provider": "mistral", "model": "mistral-small-latest", "condition": "D", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1795531015}
 {"provider": "mistral", "model": "mistral-small-latest", "condition": "E", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1795531436}
 {"provider": "mistral", "model": "mistral-small-latest", "condition": "C", "id": "D1-substrate", "answer": "[ERROR retries]", "ts": 1795531873}
+{"provider": "mistral", "model": "mistral-small-latest", "condition": "A", "id": "D1-substrate", "answer": "[ERROR 402] {\"object\":\"error\",\"message\":\"You need a subscription to access this API.\",\"type\":\"billing_no_api_budget_configured\",\"par", "ts": 1795611692}
+{"provider": "mistral", "model": "mistral-small-latest", "condition": "D", "id": "D1-substrate", "answer": "[ERROR 402] {\"object\":\"error\",\"message\":\"You need a subscription to access this API.\",\"type\":\"billing_no_api_budget_configured\",\"par", "ts": 1795611707}
+{"provider": "mistral", "model": "mistral-small-latest", "condition": "E", "id": "D1-substrate", "answer": "[ERROR 402] {\"object\":\"error\",\"message\":\"You need a subscription to access this API.\",\"type\":\"billing_no_api_budget_configured\",\"par", "ts": 1795611722}
+{"provider": "mistral", "model": "mistral-small-latest", "condition": "C", "id": "D1-substrate", "answer": "[ERROR 402] {\"object\":\"error\",\"message\":\"You need a subscription to access this API.\",\"type\":\"billing_no_api_budget_configured\",\"par", "ts": 1795611758}
